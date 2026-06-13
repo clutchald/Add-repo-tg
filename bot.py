@@ -230,8 +230,8 @@ async def text_command_handler(client: Client, message: Message):
         return
         
     step_num = parts[1].strip()
-    if step_num not in ["1", "2", "3", "4"]:
-        await message.reply_text("❌ **Invalid step number!** The step number must be 1, 2, 3, or 4.")
+    if step_num not in ["1", "2", "3", "4", "5"]:
+        await message.reply_text("❌ **Invalid step number!** The step number must be 1, 2, 3, 4, or 5.")
         return
         
     active_configs[message.from_user.id] = {
@@ -375,16 +375,8 @@ async def message_handler(client: Client, message: Message):
         return
 
     elif "Verify Now" in text or "Verify" in text or "🔐" in text:
-        response = (
-            "**🔐 Start Account Verification**\n\n"
-            "To start the verification and receive your first batch of Reels:\n\n"
-            "1️⃣ Copy the profile links of your **2 Instagram accounts**.\n"
-            "2️⃣ Send them in this chat below.\n"
-            "3️⃣ Our team will review them (takes 15-30 minutes) and activate your dashboard!\n\n"
-            "*Send your links now to start earning 10,000 INR/week!* 💰📲"
-        )
-        await message.reply_text(response)
-        return
+    await send_step_messages(client, message.chat.id, "5")
+    return
 
     is_ig_link = re.search(r"(instagram\.com|instagr\.am|ig\.me)", text, re.IGNORECASE) if text else False
     is_ig_username = (text.startswith("@") or len(text.split()) == 2 or (len(text.splitlines()) == 2 and any(len(line) > 3 for line in text.splitlines()))) if text else False
