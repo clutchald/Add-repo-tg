@@ -375,8 +375,8 @@ async def message_handler(client: Client, message: Message):
         return
 
     elif "Verify Now" in text or "Verify" in text or "🔐" in text:
-           await send_step_messages(client, message.chat.id, "5")
-    return
+        await send_step_messages(client, message.chat.id, "5")
+        return
     
     is_ig_link = re.search(r"(instagram\.com|instagr\.am|ig\.me)", text, re.IGNORECASE) if text else False
     is_ig_username = (text.startswith("@") or len(text.split()) == 2 or (len(text.splitlines()) == 2 and any(len(line) > 3 for line in text.splitlines()))) if text else False
