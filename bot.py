@@ -96,7 +96,12 @@ DEFAULT_STEPS = {
         "• **Methods**: Bank Transfer / UPI (GPay, PhonePe, Paytm, etc.) 💳\n"
         "• **Requirement**: Just ensure you upload the provided Reels daily on both accounts.\n\n"
         "*Real work, weekly payments, 100% genuine!* ✨"
-    )
+    ),
+"5": (
+    "**🔐 Start Account Verification**\n\n"
+    "Send your 2 Instagram account links for verification.\n\n"
+    "Our team will review them and contact you shortly."
+)
 }
 
 active_configs = {}
